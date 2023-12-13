@@ -1,0 +1,30 @@
+<nav class="navbar  navbar-expand-lg navbar-dark   bg-danger  ">
+    <a class="navbar-brand " routerLink="#">Souled Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Product</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+                <marquee  >
+        <h3 style="color: white; ">20% off on  purchase above 1500</h3>
+      </marquee>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button *ngIf="!authserv.getToken()" class="btn btn-primary " (click)="onLogin()">Login</button>
+        <button  *ngIf="authserv.getToken()" class="btn btn-outline-light   "  (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </nav>
